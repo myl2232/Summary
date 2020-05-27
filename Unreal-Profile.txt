@@ -1,0 +1,32 @@
+stat SceneRendering
+stat Game
+stat DumpFrame -ms=0.1
+
+ForwardShading:
+r.MSAACount  
+
+GPUProfiler:
+r.ProfileGPU.ShowUI
+r.EarlyZPass / r.EarlyZPassMovable.
+r.ShadowQuality.Disable
+r.HZBOcclusion 
+r.TiledDeferredShading / r.TiledDeferredShading.MinimumCount
+r.NoTiledReflections
+
+GPU Bottleneck:
+r.ScreenPercentage
+r.Shadow.MaxResolution
+stat GPU
+stat startfile / stat stopfile
+<  DECLARE_FLOAT_COUNTER_STAT(TEXT("Postprocessing"), Stat_GPU_Postprocessing, STATGROUP_GPU); >
+<  SCOPED_GPU_STAT(RHICmdList, Stat_GPU_Postprocessing); >
+r.VisualizeOccludedPrimitives
+r.AllowOcclusionQueries
+Slomo----Allows to slow down or accelerate time.
+StartFPSChart / StopFPSChart
+
+FX.AllowGPUSorting
+FX.FreezeParticleSimulation
+r.SSR.MaxRoughness
+
+UE4.exe -NoSound / -NoTextureStreaming / -NoVerifyGC / -NoVSync / -Streaming(Useful with StartFPSChart/StopFPSChart )	
